@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutInternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="@dimen/_10sdp"
+        app:behavior_skipCollapsed="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+        <TextView
+            android:id="@+id/tv_label_bottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/avenir_heavy"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_close_bottomSheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_close_bottomSheet" />
+
+        <ImageView
+            android:id="@+id/iv_close_bottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/layout_bg_transparent_gray_selector_with_bg_white"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/close_black_icon"
+            android:text="@string/app_name"
+            android:textColor="@color/trolleygrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="352dp" />
+
+
+        <View
+            android:id="@+id/line_bottom_sheet_item"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray3"
+            app:layout_constraintTop_toBottomOf="@+id/iv_close_bottomSheet"
+            tools:layout_editor_absoluteX="13dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/line_bottom_sheet_item"
+            tools:layout_editor_absoluteX="13dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

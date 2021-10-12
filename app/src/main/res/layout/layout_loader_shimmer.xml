@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/ivlogo_customProgressDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/loading"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avLoadingIndicator_customProgressDialog"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivlogo_customProgressDialog"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"
+            app:indicatorColor="@color/colorAccent"
+            app:indicatorName="BallPulseIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ivlogo_customProgressDialog"
+            app:layout_constraintStart_toStartOf="@+id/ivlogo_customProgressDialog"
+            app:layout_constraintTop_toBottomOf="@+id/ivlogo_customProgressDialog" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
