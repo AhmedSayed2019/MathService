@@ -1,17 +1,15 @@
-package math.question.task.view.activity.addNewTask
+package math.question.task.view.fragments
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import math.question.task.MyApplication
-import math.question.task.view.viewModel.AddNewTaskViewModel
+import math.question.task.view.viewModel.AddTaskViewModel
 
-class AddNewTaskViewModelFactory(
+class AddTaskViewModelFactory(
     var application: MyApplication
 ) :
     ViewModelProvider.NewInstanceFactory() {
-
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return AddNewTaskViewModel(application) as T
+        return AddTaskViewModel(application) as T
     }
-
 }

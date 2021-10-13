@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="math.question.task.view.viewModel.AddTaskViewModel" />
+
+        <variable
+            name="activity"
+            type="math.question.task.view.fragments.AddTaskFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.AddTaskFragment">
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/app_bar_title_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewModel="@{viewModel}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <include
+            android:id="@+id/top_view"
+            layout="@layout/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_view"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edttextFirstNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="start"
+                    android:hint="@string/first_number"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:errorEnabled="true"
+                    app:errorTextAppearance="@style/TextInputLayoutErrorStyle"
+                    app:errorTextColor="@color/dark_red"
+                    app:expandedHintEnabled="true"
+                    app:hintEnabled="true">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/avenir_light"
+                        android:gravity="start"
+                        android:inputType="number"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={viewModel.firstNumber}"
+                        android:textColor="@color/outer_space"
+                        android:textSize="@dimen/_12sdp"
+                        app:addTextChangedListener="@{viewModel.firstNumberTextWatcher}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edttextSecondNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:hint="@string/second_number"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:errorEnabled="true"
+                    app:errorTextAppearance="@style/TextInputLayoutErrorStyle"
+                    app:errorTextColor="@color/dark_red"
+                    app:expandedHintEnabled="true"
+                    app:hintEnabled="true">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/avenir_light"
+                        android:gravity="start"
+                        android:inputType="number"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={viewModel.secondNumber}"
+                        android:textColor="@color/outer_space"
+                        android:textSize="@dimen/_12sdp"
+                        app:addTextChangedListener="@{viewModel.secondNumberTextWatcher}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edttextOperator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="start"
+                    android:hint="@string/operator"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:errorEnabled="true"
+                    app:errorTextAppearance="@style/TextInputLayoutErrorStyle"
+                    app:errorTextColor="@color/dark_red"
+                    app:expandedHintEnabled="true"
+                    app:hintEnabled="true">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@color/transparent"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:fontFamily="@font/avenir_light"
+                        android:gravity="start"
+                        android:inputType="text"
+                        android:onClick="@{()->viewModel.observer.selectOperator()}"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={viewModel.operator}"
+                        android:textColor="@color/outer_space"
+                        android:textSize="@dimen/_12sdp"
+                        app:drawableEndCompat="@drawable/arrow_down_gray_icon" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edttextDelayTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:hint="@string/delay_time_in_seconds"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:errorEnabled="true"
+                    app:errorTextAppearance="@style/TextInputLayoutErrorStyle"
+                    app:errorTextColor="@color/dark_red"
+                    app:expandedHintEnabled="true"
+                    app:hintEnabled="true">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/avenir_light"
+                        android:gravity="start"
+                        android:inputType="number"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={viewModel.delayTime}"
+                        android:textColor="@color/outer_space"
+                        android:textSize="@dimen/_12sdp"
+                        app:addTextChangedListener="@{viewModel.delayTimeTextWatcher}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/radiobuttonEnglishSettingActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:checked="@={viewModel.isGetMyLocation()}"
+                    android:fontFamily="@font/avenir_roman"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/locate_me"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12sdp"
+                    app:buttonTint="@drawable/radiobutton_gray_orange_selector" />
+
+
+                <TextView
+                    android:id="@+id/tvCalculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/button_background"
+                    android:fontFamily="@font/avenir_heavy"
+                    android:gravity="center"
+                    android:onClick="@{()->viewModel.onButtonCalculateClicked()}"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/calculate"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

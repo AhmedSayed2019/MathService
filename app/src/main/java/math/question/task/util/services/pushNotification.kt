@@ -1,4 +1,4 @@
-package math.question.task.services
+package math.question.task.util.services
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,13 +10,13 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import math.question.task.R
-import math.question.task.view.activity.main.MainActivity
+import math.question.task.view.activity.HomeActivity
 
 
 fun makeStatusNotification(isForeground: Boolean, message: String, context: Context): Notification {
 
     var intent: Intent? = null
-    intent = Intent(context, MainActivity::class.java)
+    intent = Intent(context, HomeActivity::class.java)
     intent.flags = Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
     intent.action = System.currentTimeMillis().toString()
     // Make a channel if necessary

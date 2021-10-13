@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name" >Math Question Service</string>
+    <string name="app_name">Math Question Service</string>
     <string name="no_text" />
-    <string name="default_notification_channel_id" >math_question_task_default_channel</string>
-    <string name="default_notification_channel_name" >math_question_task_news</string>
-    <string name="lorem_ipsum" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+    <string name="default_notification_channel_id">math_question_task_default_channel</string>
+    <string name="default_notification_channel_name">math_question_task_news</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua. Ut enim ad minim veniam,</string>
     <string name="am">am</string>
@@ -63,14 +63,20 @@
     <string name="required_field">Required field</string>
     <string name="you_cant_divide_on_zero">You can\'t divide on Zero</string>
     <string name="select_math_operator">Select math operator</string>
-    <string name="problem_text" >Q %s %s %s = %s</string>
-    <string name="location_text" >(%s, %s)</string>
-    <string name="problem_number_text" >Q %s</string>
-    <string name="delay_text" >%ss</string>
+    <string name="problem_text">Q %s %s %s = %s</string>
+    <string name="location_text">(%s, %s)</string>
+    <string name="problem_number_text">Q %s</string>
+    <string name="delay_text">%ss</string>
     <string name="question_added_successfully">Question added successfully</string>
-    <string name="location_required" >Location required</string>
-    <string name="you_must_enable_device_location_to_get_data_based_on_your_location" >You must enable device location to get data based on your location</string>
+    <string name="location_required">Location required</string>
+    <string name="you_must_enable_device_location_to_get_data_based_on_your_location">You must enable device location to get data based on your location</string>
     <string name="locate_me">Locate Me</string>
     <string name="please_open_location_or_wait_to_get_your_location">Please open location or wait to get your location</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="create">create</string>
+    <string name="home">home</string>
 </resources>
 

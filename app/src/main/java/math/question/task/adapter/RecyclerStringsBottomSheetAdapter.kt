@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import math.question.task.R
 import math.question.task.databinding.RecyclerBottomSheetItemBinding
 import math.question.task.observer.IOnBottomSheetItemClickListener
-import math.question.task.view.activity.baseActivity.BaseActivity
+import math.question.task.view.activity.HomeActivity
 
 
 class RecyclerStringsBottomSheetAdapter(
-    val activity: BaseActivity, val ages: ArrayList<String>,
+    val activity: HomeActivity, val ages: ArrayList<String>,
     var IOnBottomSheetItemClickListener: IOnBottomSheetItemClickListener
 ) : RecyclerView.Adapter<RecyclerStringsBottomSheetAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

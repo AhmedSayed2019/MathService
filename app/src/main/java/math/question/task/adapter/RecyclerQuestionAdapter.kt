@@ -15,6 +15,8 @@ import math.question.task.util.DivideOperator
 import math.question.task.util.MultiplyOperator
 import math.question.task.util.SubOperator
 
+
+
 class RecyclerQuestionAdapter(
     var questionModels: ArrayList<QuestionModel>,
     var IOnRecyclerItemClickListener: IOnRecyclerItemClickListener

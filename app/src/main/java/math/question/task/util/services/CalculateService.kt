@@ -18,7 +18,6 @@ import io.reactivex.schedulers.Schedulers
 import math.question.task.data.model.QuestionModel
 import math.question.task.data.database.AppDatabase
 import math.question.task.data.database.QuestionDAO
-import math.question.task.services.makeStatusNotification
 import math.question.task.util.*
 
 class CalculateService : Service() {

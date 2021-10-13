@@ -13,18 +13,18 @@ import math.question.task.R
 import math.question.task.adapter.RecyclerStringsBottomSheetAdapter
 import math.question.task.databinding.BottomSheetRecyclerBinding
 import math.question.task.observer.IOnBottomSheetItemClickListener
-import math.question.task.view.activity.baseActivity.BaseActivity
+import math.question.task.view.activity.HomeActivity
 
 
 class BottomSheetStringsFragment : BottomSheetDialogFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is BaseActivity)
-            activity = context
+//        if (context is BaseActivity)
+//            activity = context
     }
 
-    lateinit var activity: BaseActivity
+//    lateinit var activity: BaseActivity
     lateinit var binding: BottomSheetRecyclerBinding
 
     override fun onCreateView(
@@ -57,7 +57,7 @@ class BottomSheetStringsFragment : BottomSheetDialogFragment() {
         binding.rcBottomSheet.layoutManager =
             LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         var myAdapter = RecyclerStringsBottomSheetAdapter(
-            activity,
+            activity as HomeActivity ,
             arrayList,
             object : IOnBottomSheetItemClickListener {
                 override fun onBottomSheetItemClickListener(position: Int) {

@@ -7,14 +7,19 @@ import androidx.lifecycle.MutableLiveData
 import math.question.task.MyApplication
 import math.question.task.R
 import math.question.task.data.model.QuestionModel
+import math.question.task.repo.QuestionRepo
 import math.question.task.util.AddOperator
 import math.question.task.util.DivideOperator
 import math.question.task.util.MultiplyOperator
 import math.question.task.util.SubOperator
+import math.question.task.view.base.BaseViewModel
 
-class AddNewTaskViewModel(
+class AddTaskViewModel(
     application: MyApplication
-) : BaseActivityViewModel(application) {
+) : BaseViewModel() {
+    private var questionRepo: QuestionRepo = QuestionRepo(application)
+    val _application: MyApplication = application
+
     lateinit var observer: Observer
     var firstNumber = MutableLiveData<String>()
     var secondNumber = MutableLiveData<String>()
@@ -117,8 +122,8 @@ class AddNewTaskViewModel(
         }
         if (isGetMyLocation.value!! && latitude == 0.0) {
             observer.onShowHideMessageDialog(
-                application.context.getString(R.string.location_required),
-                application.context.getString(R.string.please_open_location_or_wait_to_get_your_location),
+                _application.context.getString(R.string.location_required),
+                _application.context.getString(R.string.please_open_location_or_wait_to_get_your_location),
                 true
             )
             isValid = false
@@ -140,7 +145,9 @@ class AddNewTaskViewModel(
     }
 
 
+
     interface Observer {
+        fun onButtonBackClick()
         fun onShowHideMessageDialog(title: String, message: String, isShow: Boolean)
         fun selectOperator()
         fun setQuestionAlarm(questionModel: QuestionModel)

@@ -1,15 +1,15 @@
-package math.question.task.view.fragments.menu
+package math.question.task.view.fragments
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import math.question.task.MyApplication
-import math.question.task.view.viewModel.MenuViewModel
+import math.question.task.view.viewModel.HomeViewModel
 
-class MenuViewModelFactory(
+class HomeViewModelFactory(
     var application: MyApplication
 ) :
     ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return MenuViewModel(application) as T
+        return HomeViewModel(application) as T
     }
 }

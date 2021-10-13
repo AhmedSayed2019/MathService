@@ -8,14 +8,14 @@ import androidx.databinding.DataBindingUtil
 import math.question.task.R
 import math.question.task.databinding.PopupDialogSureBinding
 import math.question.task.observer.IOnAskUserAction
-import math.question.task.view.activity.baseActivity.BaseActivity
+import math.question.task.view.activity.HomeActivity
 
 class PopupDialogAskUserAction : BaseDialogFragment() {
 
-    internal var activity: BaseActivity? = null
+    internal var activity: HomeActivity? = null
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is BaseActivity) {
+        if (context is HomeActivity) {
             activity = context
         }
     }
@@ -27,7 +27,7 @@ class PopupDialogAskUserAction : BaseDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        if (activity == null) activity = getActivity() as BaseActivity?
+        if (activity == null) activity = getActivity() as HomeActivity?
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.popup_dialog_sure, container, false)
         binding.lifecycleOwner = this
@@ -44,7 +44,7 @@ class PopupDialogAskUserAction : BaseDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         if (activity == null)
-            activity = requireActivity() as BaseActivity?
+            activity = requireActivity() as HomeActivity?
         dialog = Dialog(requireActivity())
         dialog = Dialog(requireActivity(), R.style.FullWidthDialogTheme)
         dialog.window!!.setBackgroundDrawableResource(R.color.transparent)

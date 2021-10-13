@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="@dimen/_30sdp"
         android:background="@drawable/sh_top_rounded_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
