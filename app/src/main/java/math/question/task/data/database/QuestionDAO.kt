@@ -13,6 +13,7 @@ interface QuestionDAO {
     @Query("SELECT * FROM QuestionModel ORDER BY id DESC")
     fun getQuestionModels(): Flowable<List<QuestionModel>>
 
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg questionModel: QuestionModel)
 
