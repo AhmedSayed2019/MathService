@@ -6,14 +6,12 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -25,12 +23,10 @@ import math.question.task.MyApplication
 import math.question.task.R
 import math.question.task.data.model.QuestionModel
 import math.question.task.databinding.FragmentAddTaskBinding
-import math.question.task.observer.IOnAskUserAction
 import math.question.task.observer.IOnBottomSheetItemClickListener
 import math.question.task.util.LOCAL_PRODCAST_RECIEVER_UpdateQuestions
 import math.question.task.util.LocationHelper
 import math.question.task.util.MathUtils
-import math.question.task.util.ProgressDialogLoading
 import math.question.task.util.services.AlarmReceiver
 
 import math.question.task.view.sub.BottomSheetStringsFragment
@@ -111,8 +107,12 @@ open class AddTaskFragment : Fragment() , AddTaskViewModel.Observer {
         findNavController().popBackStack()
     }
 
-    override fun onShowHideMessageDialog(title: String, message: String, isShow: Boolean) {
-        showHideMessageDialog(isShow, title, message)
+    override fun onShowHideMessageDialog( message: String) {
+        Toast.makeText(
+             context,
+            message,
+        Toast.LENGTH_LONG
+        ).show()
     }
      fun setListener() {
         binding.viewModel!!.isGetMyLocation.observe(viewLifecycleOwner , Observer {
@@ -203,25 +203,4 @@ open class AddTaskFragment : Fragment() , AddTaskViewModel.Observer {
     }
 
 
-    fun showHideMessageDialog(isShow: Boolean, title: String, message: String) {
-//        if (isShow)
-//            showMessage(
-//               AppCompatActivity(), title,
-//                message,
-//                object : IOnAskUserAction {
-//                    override fun onPositiveAction() {
-//                    }
-//
-//                    override fun onNegativeAction() {
-//                    }
-//
-//                },
-//                false,
-//                getString(R.string.cancel),
-//                getString(R.string.ok),
-//                true
-//            )
-//        else
-//            ProgressDialogLoading.dismiss(AppCompatActivity())
-    }
 }

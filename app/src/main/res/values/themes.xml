@@ -153,7 +153,7 @@
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
     <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/big_top_round_corner_bg_white</item>
+        <item name="android:background">@drawable/sh_top_rounded_pry</item>
     </style>
 
     <style name="progressBarBlue" parent="@style/Theme.AppCompat">

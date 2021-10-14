@@ -122,9 +122,7 @@ class AddTaskViewModel(
         }
         if (isGetMyLocation.value!! && latitude == 0.0) {
             observer.onShowHideMessageDialog(
-                _application.context.getString(R.string.location_required),
                 _application.context.getString(R.string.please_open_location_or_wait_to_get_your_location),
-                true
             )
             isValid = false
         }
@@ -148,7 +146,7 @@ class AddTaskViewModel(
 
     interface Observer {
         fun onButtonBackClick()
-        fun onShowHideMessageDialog(title: String, message: String, isShow: Boolean)
+        fun onShowHideMessageDialog( message: String)
         fun selectOperator()
         fun setQuestionAlarm(questionModel: QuestionModel)
     }

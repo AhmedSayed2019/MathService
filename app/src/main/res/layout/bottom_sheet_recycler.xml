@@ -38,11 +38,10 @@
             android:layout_alignParentEnd="true"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_centerVertical="true"
-            android:background="@drawable/layout_bg_transparent_gray_selector_with_bg_white"
             android:padding="@dimen/_10sdp"
             android:src="@drawable/close_black_icon"
             android:text="@string/app_name"
-            android:textColor="@color/trolleygrey"
+            android:textColor="@color/outer_space"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="352dp" />
