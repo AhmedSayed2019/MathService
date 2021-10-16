@@ -132,4 +132,27 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_component_version"
     implementation 'com.google.android.gms:play-services-location:18.0.0'
 
+
+
+    def timber_version = '4.7.1'
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+
+    def koin_version = "2.0.1"
+
+    // koin
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-core:$koin_version"
+
+
+    def lottie_version = '3.4.0'
+    // lottie
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    // font
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+
 }

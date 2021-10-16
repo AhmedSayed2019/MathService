@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="math.question.task.view.viewModel.AddTaskViewModel" />
+            type="math.question.task.ui.viewModel.AddTaskViewModel" />
 
 
     </data>

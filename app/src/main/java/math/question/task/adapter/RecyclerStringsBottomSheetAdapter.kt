@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import math.question.task.R
 import math.question.task.databinding.RecyclerBottomSheetItemBinding
 import math.question.task.observer.IOnBottomSheetItemClickListener
-import math.question.task.view.activity.HomeActivity
+import math.question.task.ui.activity.HomeActivity
 
 
 class RecyclerStringsBottomSheetAdapter(

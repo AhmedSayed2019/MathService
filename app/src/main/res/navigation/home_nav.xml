@@ -9,13 +9,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="math.question.task.view.fragments.HomeFragment"
+        android:name="math.question.task.ui.fragments.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_createOperation"
-        android:name="math.question.task.view.fragments.AddTaskFragment"
+        android:name="math.question.task.ui.fragments.AddTaskFragment"
         android:label="@string/add_new_task"
         tools:layout="@layout/fragment_add_task" />
 

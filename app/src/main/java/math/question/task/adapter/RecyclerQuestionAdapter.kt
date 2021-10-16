@@ -10,10 +10,10 @@ import math.question.task.databinding.ItemProgressLoadingBinding
 import math.question.task.databinding.ItemRecyclerQuestionBinding
 import math.question.task.data.model.QuestionModel
 import math.question.task.observer.IOnRecyclerItemClickListener
-import math.question.task.util.AddOperator
-import math.question.task.util.DivideOperator
-import math.question.task.util.MultiplyOperator
-import math.question.task.util.SubOperator
+import math.question.task.common.util.AddOperator
+import math.question.task.common.util.DivideOperator
+import math.question.task.common.util.MultiplyOperator
+import math.question.task.common.util.SubOperator
 
 
 
